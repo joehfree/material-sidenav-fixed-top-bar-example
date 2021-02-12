@@ -1,0 +1,38 @@
+<div class="page-container">
+  <mat-toolbar color="primary" class="navbar">
+    <span>Top Bar Thingy</span>
+  </mat-toolbar>
+
+  <mat-toolbar color="primary" class="toolbar">
+    <span>The thingy under the top bar</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" #sidenav [(opened)]="sidenavIsOpen" class="sidenav-menu">
+      <mat-toolbar>Menu</mat-toolbar>
+      <div class="container">
+        <mat-selection-list>
+          <mat-list-option *ngFor="let item of menuItems">
+            {{item}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="container">
+        <h3>Open the console below and drag it up until you see scrollbars.</h3>
+        <br />
+        <button mat-raised-button (click)="sidenav.toggle()">
+          Toggle The Sidenav
+        </button>
+        <br />
+        <mat-selection-list>
+          <mat-list-option *ngFor="let item of contentItems">
+            {{item}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
